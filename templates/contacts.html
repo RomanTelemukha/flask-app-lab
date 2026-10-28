@@ -3,32 +3,33 @@
 {% block title %}Контакти{% endblock %}
 
 {% block content %}
-    <section>
-        <h2>Контактні дані</h2>
-        <p><strong>Email:</strong> student@example.com</p>
-        <p><strong>Telegram:</strong> @student_dev</p>
-        <p><strong>GitHub:</strong> github.com/student</p>
-    </section>
+<div class="row justify-content-center">
+    <div class="col-12 col-md-8 col-lg-6">
+        <section class="card p-4 mb-4 shadow-sm border-0">
+            <h2>Контактні дані</h2>
+            <p class="mb-1"><strong>Email:</strong> student@example.com</p>
+            <p class="mb-1"><strong>Telegram:</strong> @student_dev</p>
+            <p class="m-0"><strong>GitHub:</strong> github.com/student</p>
+        </section>
 
-    <section>
-        <h2>Форма зворотного зв'язку</h2>
-        <form action="#" method="post">
-            <div>
-                <label for="name">Ваше ім'я:</label><br>
-                <input type="text" id="name" name="name" required>
-            </div>
-            <br>
-            <div>
-                <label for="email">Ваш Email:</label><br>
-                <input type="email" id="email" name="email" required>
-            </div>
-            <br>
-            <div>
-                <label for="message">Повідомлення:</label><br>
-                <textarea id="message" name="message" rows="5" required></textarea>
-            </div>
-            <br>
-            <button type="submit">Надіслати</button>
-        </form>
-    </section>
+        <section class="card p-4 mb-4 shadow-sm border-0">
+            <h2>Форма зворотного зв'язку</h2>
+            <form action="#" method="post">
+                <div class="mb-3">
+                    <label for="name" class="form-label fw-semibold">Ваше ім'я:</label>
+                    <input type="text" id="name" name="name" class="form-control" required>
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label fw-semibold">Ваш Email:</label>
+                    <input type="email" id="email" name="email" class="form-control" required>
+                </div>
+                <div class="mb-3">
+                    <label for="message" class="form-label fw-semibold">Повідомлення:</label>
+                    <textarea id="message" name="message" class="form-control" rows="4" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary w-100">Надіслати</button>
+            </form>
+        </section>
+    </div>
+</div>
 {% endblock %}

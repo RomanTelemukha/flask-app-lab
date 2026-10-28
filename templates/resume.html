@@ -3,41 +3,47 @@
 {% block title %}Резюме{% endblock %}
 
 {% block content %}
-    <section>
-        <h2>Про себе</h2>
-        <img src="{{ url_for('static', filename='images/naivery.jpg') }}" alt="Фото профілю" width="150">
-        <p>Студент, який вивчає розробку програмного забезпечення. Займаюся створенням вебзастосунків на Python та Flask.</p>
-    </section>
+<div class="row justify-content-center">
+    <div class="col-12 col-lg-10">
+        <section class="card p-4 mb-4 shadow-sm border-0">
+            <h2>Про себе</h2>
+            <div class="d-flex align-items-center flex-column flex-sm-row gap-3 text-center text-sm-start">
+                <img src="{{ url_for('static', filename='images/naivery.jpg') }}" alt="Фото профілю" class="rounded-circle profile-img img-fluid">
+                <p class="m-0 text-secondary">Студент, який вивчає розробку програмного забезпечення. Займаюся створенням вебзастосунків на Python та Flask.</p>
+            </div>
+        </section>
 
-    <section>
-        <h2>Освіта</h2>
-        <p>Прикарпатський національний университет імені Василя Стефаника</p>
-        <p>Спеціальність: Інженерія програмного забезпечення / Комп'ютерні науки</p>
-    </section>
+        <section class="card p-4 mb-4 shadow-sm border-0">
+            <h2>Освіта</h2>
+            <p class="mb-1"><strong>Прикарпатський національний університет імені Василя Стефаника</strong></p>
+            <p class="m-0 text-secondary">Спеціальність: Інженерія програмного забезпечення / Комп'ютерні науки</p>
+        </section>
 
-    <section>
-        <h2>Навички</h2>
-        <ul>
-            <li>Розробка серверної логіки (Backend)</li>
-            <li>Робота з базами даних</li>
-            <li>Система контролю версій Git</li>
-            <li>Базові навички роботи в Linux</li>
-        </ul>
-    </section>
+        <section class="card p-4 mb-4 shadow-sm border-0">
+            <h2>Навички</h2>
+            <ul class="mb-0 ps-3">
+                <li>Розробка серверної логіки (Backend)</li>
+                <li>Робота з базами даних</li>
+                <li>Система контролю версій Git</li>
+                <li>Базові навички роботи в Linux</li>
+            </ul>
+        </section>
 
-    <section>
-        <h2>Технології</h2>
-        <ul>
-            <li>Python, Flask</li>
-            <li>SQL, PostgreSQL</li>
-            <li>HTML, CSS</li>
-            <li>Git, GitHub</li>
-        </ul>
-    </section>
+        <section class="card p-4 mb-4 shadow-sm border-0">
+            <h2>Технології</h2>
+            <ul class="mb-0 ps-3">
+                <li>Python, Flask</li>
+                <li>SQL, PostgreSQL</li>
+                <li>HTML, CSS, Bootstrap</li>
+                <li>Git, GitHub</li>
+            </ul>
+        </section>
 
-    <section>
-        <h2>Досвід роботи (Проєкти)</h2>
-        <h3>Лабораторний проєкт: Веб-сайт на Flask</h3>
-        <p>Розробка базової структури вебзастосунку з використанням маршрутизації, шаблонізатора Jinja2 та семантичної верстки HTML5.</p>
-    </section>
+        <section class="card p-4 mb-4 shadow-sm border-0">
+            <h2>Досвід роботи (Проєкти)</h2>
+            <h3 class="h5">Лабораторний проєкт: Веб-сайт на Flask</h3>
+            <p class="m-0 text-secondary">Розробка базової структури вебзастосунку з використанням маршрутизації, шаблонізатора Jinja2, Bootstrap та адаптивної верстки.</p>
+        </section>
+    </div>
+</div>
 {% endblock %}
