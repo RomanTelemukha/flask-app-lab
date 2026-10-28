@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block title %}Контакти{% endblock %}
+
+{% block content %}
+    <section>
+        <h2>Контактні дані</h2>
+        <p><strong>Email:</strong> student@example.com</p>
+        <p><strong>Telegram:</strong> @student_dev</p>
+        <p><strong>GitHub:</strong> github.com/student</p>
+    </section>
+
+    <section>
+        <h2>Форма зворотного зв'язку</h2>
+        <form action="#" method="post">
+            <div>
+                <label for="name">Ваше ім'я:</label><br>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <br>
+            <div>
+                <label for="email">Ваш Email:</label><br>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <br>
+            <div>
+                <label for="message">Повідомлення:</label><br>
+                <textarea id="message" name="message" rows="5" required></textarea>
+            </div>
+            <br>
+            <button type="submit">Надіслати</button>
+        </form>
+    </section>
+{% endblock %}
