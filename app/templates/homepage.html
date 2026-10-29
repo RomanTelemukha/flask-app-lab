@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %}Homepage{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-12 col-lg-8">
+        <div class="card p-4 shadow-sm border-0">
+            <h2 class="mb-3">Інформація про клієнта</h2>
+            <p><strong>User Agent:</strong> {{ agent }}</p>
+            <div class="mt-4">
+                <a href="{{ url_for('main') }}" class="btn btn-secondary">На головну</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

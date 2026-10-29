@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block title %}Головна сторінка{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-12 col-lg-8 text-center">
+        <div class="card p-5 shadow-sm border-0">
+            <h1 class="display-5 fw-bold mb-3">Вітаємо у веб-застосунку!</h1>
+            <p class="lead text-secondary mb-4">Навчальний проект на Flask з модульною структурою на Blueprints.</p>
+            <div class="d-flex justify-content-center gap-3 flex-wrap">
+                <a href="{{ url_for('home') }}" class="btn btn-primary px-4 py-2">Homepage</a>
+                <a href="{{ url_for('resume') }}" class="btn btn-outline-primary px-4 py-2">Резюме</a>
+                <a href="{{ url_for('products.product_list') }}" class="btn btn-outline-success px-4 py-2">Товари</a>
+                <a href="{{ url_for('users.greetings', name='student', age=20) }}" class="btn btn-outline-secondary px-4 py-2">Користувачі</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
