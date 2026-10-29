@@ -10,13 +10,24 @@
 <body class="bg-light d-flex flex-column min-vh-100">
     <header class="bg-dark text-white py-3 shadow-sm">
         <div class="container text-center">
-            <h1 class="h3 mb-3 fw-bold">{{ title }}</h1>
+            <h1 class="h3 mb-3 fw-bold">{% block header_title %}{{ title if title else 'Flask Application' }}{% endblock %}</h1>
             {% include "nav.html" %}
         </div>
     </header>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+        <div class="container mt-3">
+            {% for category, message in messages %}
+            <div class="alert alert-{{ 'danger' if category in ['error', 'danger'] else category }} alert-dismissible fade show shadow-sm" role="alert">
+                {{ message }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            {% endfor %}
+        </div>
+        {% endif %}
+    {% endwith %}
     <main class="container my-4 flex-grow-1">
         {% block content %}
-
         {% endblock %}
     </main>
     {% include "footer.html" %}

@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block title %}Вхід{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-12 col-sm-8 col-md-6 col-lg-4">
+        <div class="card p-4 shadow-sm border-0 mt-4">
+            <h2 class="text-center mb-4 fw-normal">Login</h2>
+            <form method="post" action="{{ url_for('users.login') }}">
+                <div class="mb-3">
+                    <label for="username" class="form-label text-muted">User name</label>
+                    <input type="text" class="form-control" id="username" name="username" required autofocus>
+                </div>
+                <div class="mb-4">
+                    <label for="password" class="form-label text-muted">Password</label>
+                    <input type="password" class="form-control" id="password" name="password" required>
+                </div>
+                <button type="submit" class="btn btn-primary w-100 py-2">Sign in</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

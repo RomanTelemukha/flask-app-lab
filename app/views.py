@@ -21,3 +21,13 @@ def resume():
 @app.route("/contacts")
 def contacts():
     return render_template("contacts.html", title="Контакти")
+
+
+@app.route("/login")
+def login_redirect():
+    return redirect(url_for("users.login"))
+
+
+@app.route("/profile")
+def profile_redirect():
+    return redirect(url_for("users.profile"))
