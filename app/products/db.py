@@ -50,7 +50,15 @@ def init_db():
         table = db.table("products")
         if len(table) == 0:
             for item in DEFAULT_PRODUCTS:
-                table.insert(item)
+                table.insert(item.copy())
+
+
+def reset_db():
+    with get_db() as db:
+        table = db.table("products")
+        table.truncate()
+        for item in DEFAULT_PRODUCTS:
+            table.insert(item.copy())
 
 
 def get_all_products():
@@ -102,4 +110,3 @@ def delete_product(product_id):
         product_query = Query()
         removed = table.remove(product_query.id == product_id)
         return len(removed) > 0
-

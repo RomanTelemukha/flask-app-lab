@@ -1,7 +1,7 @@
 import io
 import unittest
 from app import app
-from app.products.db import init_db
+from app.products.db import reset_db
 
 
 class ProductTestCase(unittest.TestCase):
@@ -9,7 +9,10 @@ class ProductTestCase(unittest.TestCase):
         app.config["TESTING"] = True
         app.config["WTF_CSRF_ENABLED"] = False
         self.client = app.test_client()
-        init_db()
+        reset_db()
+
+    def tearDown(self):
+        reset_db()
 
     def test_products_list(self):
         response = self.client.get("/products/")
