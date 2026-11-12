@@ -102,3 +102,4 @@ def delete_product(product_id):
         product_query = Query()
         removed = table.remove(product_query.id == product_id)
         return len(removed) > 0
+

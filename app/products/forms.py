@@ -54,3 +54,4 @@ class ProductForm(FlaskForm):
         ]
     )
     submit = SubmitField("Зберегти")
+
