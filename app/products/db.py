@@ -14,7 +14,7 @@ DEFAULT_PRODUCTS = [
         "content": "Потужний ноутбук з процесором Intel Core i7, 16 ГБ оперативної пам’яті та SSD на 512 ГБ.",
         "category": "Ноутбуки",
         "quantity": 10,
-        "image": "",
+        "image": "images/laptop.jpeg",
         "created_at": "2026-11-12 10:00:00"
     },
     {
@@ -24,7 +24,7 @@ DEFAULT_PRODUCTS = [
         "content": "Смартфон із 6.5-дюймовим OLED-дисплеєм, подвійною камерою та акумулятором на 5000 мА·год.",
         "category": "Смартфони",
         "quantity": 25,
-        "image": "",
+        "image": "images/phone.jpg",
         "created_at": "2026-11-12 10:00:00"
     },
     {
@@ -34,7 +34,7 @@ DEFAULT_PRODUCTS = [
         "content": "Настільний комп’ютер для ігор або роботи з графікою: RTX 4070, 32 ГБ RAM, 1 ТБ SSD.",
         "category": "Комп'ютери",
         "quantity": 5,
-        "image": "",
+        "image": "images/pc.png",
         "created_at": "2026-11-12 10:00:00"
     }
 ]
