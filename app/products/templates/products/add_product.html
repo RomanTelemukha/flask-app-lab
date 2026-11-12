@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% from "_render_field.html" import render_field %}
+
+{% block title %}Додати товар{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-12 col-md-8 col-lg-6">
+        <div class="card p-4 shadow-sm border-0">
+            <h2 class="mb-4 text-center fw-bold">Додати новий товар</h2>
+            <form method="post" action="{{ url_for('products.product_add') }}" enctype="multipart/form-data" novalidate>
+                {{ form.hidden_tag() }}
+                {{ render_field(form.name) }}
+                {{ render_field(form.category) }}
+                {{ render_field(form.price) }}
+                {{ render_field(form.quantity) }}
+                {{ render_field(form.content) }}
+                {{ render_field(form.image) }}
+                <div class="d-flex gap-2 mt-4">
+                    {{ form.submit(class="btn btn-success flex-grow-1") }}
+                    <a href="{{ url_for('products.product_list') }}" class="btn btn-secondary">Скасувати</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% from "_render_field.html" import render_field %}
+
+{% block title %}Редагувати товар{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-12 col-md-8 col-lg-6">
+        <div class="card p-4 shadow-sm border-0">
+            <h2 class="mb-4 text-center fw-bold">Редагувати товар #{{ product.id }}</h2>
+            <form method="post" action="{{ url_for('products.product_edit', product_id=product.id) }}" enctype="multipart/form-data" novalidate>
+                {{ form.hidden_tag() }}
+                {{ render_field(form.name) }}
+                {{ render_field(form.category) }}
+                {{ render_field(form.price) }}
+                {{ render_field(form.quantity) }}
+                {{ render_field(form.content) }}
+                {% if product.image %}
+                <div class="mb-3">
+                    <label class="form-label fw-semibold">Поточне зображення:</label>
+                    <div class="d-flex align-items-center gap-3">
+                        <img src="{{ url_for('static', filename=product.image) }}" alt="{{ product.name }}" style="height: 80px; width: 80px; object-fit: cover;" class="rounded border">
+                        <span class="text-muted small">Оберіть новий файл нижче, якщо хочете замінити</span>
+                    </div>
+                </div>
+                {% endif %}
+                {{ render_field(form.image) }}
+                <div class="d-flex gap-2 mt-4">
+                    {{ form.submit(class="btn btn-warning flex-grow-1") }}
+                    <a href="{{ url_for('products.product_detail', product_id=product.id) }}" class="btn btn-secondary">Скасувати</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
