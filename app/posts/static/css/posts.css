@@ -1,0 +1,17 @@
+.myclass {
+    background-color: #bbff00;
+}
+
+.post-card {
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.post-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.post-img {
+    height: 150px;
+    object-fit: cover;
+}

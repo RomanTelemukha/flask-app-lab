@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block title %}Підтвердження видалення{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-12 col-md-8 col-lg-6">
+            <div class="card p-4 shadow-sm border-0">
+                <h2 class="h4 mb-3 text-danger fw-bold">Підтвердження видалення</h2>
+                <p>Ви дійсно хочете видалити пост <strong>"{{ post.title }}"</strong>?</p>
+
+                <form method="POST" action="{{ url_for('posts.delete_post', id=post.id) }}">
+                    <div class="d-flex gap-2 mt-4">
+                        <button type="submit" class="btn btn-danger">Так, видалити</button>
+                        <a href="{{ url_for('posts.detail_post', id=post.id) }}" class="btn btn-secondary">Скасувати</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

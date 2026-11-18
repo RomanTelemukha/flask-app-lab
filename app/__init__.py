@@ -31,6 +31,7 @@ def create_app(config_name=None):
     app.register_blueprint(products_bp, url_prefix="/products")
     app.register_blueprint(products_bp, url_prefix="/product", name="product")
     app.register_blueprint(post_bp, url_prefix="/post")
+    app.register_blueprint(post_bp, url_prefix="/posts", name="post")
 
     @app.errorhandler(404)
     def not_found(e):
