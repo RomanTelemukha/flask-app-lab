@@ -24,3 +24,4 @@ class PostForm(FlaskForm):
     )
     category = SelectField("Category", choices=CATEGORIES, default="news")
     submit = SubmitField("Add Post")
+
