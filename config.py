@@ -1,2 +1,4 @@
-SECRET_KEY = "secret123"
-MAX_CONTENT_LENGTH = 16 * 1024 * 1024
+from app.config import Config, DevelopmentConfig, TestingConfig, ProductionConfig, config
+
+SECRET_KEY = Config.SECRET_KEY
+MAX_CONTENT_LENGTH = Config.MAX_CONTENT_LENGTH
