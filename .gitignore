@@ -5,6 +5,25 @@ venv/
 # Кеш Python
 __pycache__/
 *.py[cod]
+*$py.class
+
+# Змінні середовища
+.env
+
+# База даних SQLite
+instance/
+*.sqlite
+*.sqlite3
+*.db
+
+# Тестування та покриття
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Налаштування IDE
+.vscode/
+.idea/
 
 # Системні файли
 .DS_Store
@@ -14,6 +33,3 @@ Thumbs.db
 # Завантажені файли
 app/static/uploads/*
 !app/static/uploads/.gitkeep
-
-# База даних SQLite
-instance/
