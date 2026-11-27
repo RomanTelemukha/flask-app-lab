@@ -1,23 +1,52 @@
 {% extends "base.html" %}
 
-{% block title %}Вхід{% endblock %}
+{% block title %}{{ title }}{% endblock %}
 
 {% block content %}
 <div class="row justify-content-center">
     <div class="col-12 col-sm-8 col-md-6 col-lg-4">
         <div class="card p-4 shadow-sm border-0 mt-4">
             <h2 class="text-center mb-4 fw-normal">Login</h2>
+            <p class="text-center text-muted small">Будь ласка, введіть ваше ім'я користувача та пароль!</p>
             <form method="post" action="{{ url_for('users.login') }}">
+                {{ form.hidden_tag() }}
                 <div class="mb-3">
-                    <label for="username" class="form-label text-muted">User name</label>
-                    <input type="text" class="form-control" id="username" name="username" required autofocus>
+                    <label for="username" class="form-label text-muted">User name or Email</label>
+                    {% if form.username.errors %}
+                        {{ form.username(class="form-control is-invalid", id="username") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.username.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.username(class="form-control", id="username") }}
+                    {% endif %}
                 </div>
-                <div class="mb-4">
-                    <label for="password" class="form-label text-muted">Password</label>
-                    <input type="password" class="form-control" id="password" name="password" required>
+                <div class="mb-3">
+                    {{ form.password.label(class="form-label text-muted") }}
+                    {% if form.password.errors %}
+                        {{ form.password(class="form-control is-invalid", id="password") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.password.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.password(class="form-control", id="password") }}
+                    {% endif %}
                 </div>
-                <button type="submit" class="btn btn-primary w-100 py-2">Sign in</button>
+                <div class="mb-3 form-check">
+                    {{ form.remember(class="form-check-input", id="remember") }}
+                    {{ form.remember.label(class="form-check-label text-muted", for="remember") }}
+                </div>
+                {{ form.submit(class="btn btn-primary w-100 py-2") }}
             </form>
+            <div class="border-top pt-3 mt-3 text-center">
+                <small class="text-muted">
+                    Need An Account? <a class="ms-1" href="{{ url_for('users.register') }}">Sign Up Now</a>
+                </small>
+            </div>
         </div>
     </div>
 </div>

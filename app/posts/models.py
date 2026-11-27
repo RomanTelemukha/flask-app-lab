@@ -24,7 +24,7 @@ class Post(db.Model):
         db.Enum("news", "publication", "tech", "other", name="post_category")
     )
     is_active: Mapped[bool] = mapped_column(db.Boolean, default=True)
-    user_id: Mapped[int] = mapped_column(ForeignKey("users.id"))
+    user_id: Mapped[int | None] = mapped_column(ForeignKey("users.id"), nullable=True)
     user: Mapped["User"] = relationship(back_populates="posts")
     tags: Mapped[list["Tag"]] = relationship(secondary=post_tags, back_populates="posts")
     def __repr__(self):
